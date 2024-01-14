@@ -1,18 +1,18 @@
--- Usuniêcie cudzys³ów z kategorii 
+-- Usuniecie cudzyslowÃ³w z kategorii 
 UPDATE 
   Content 
 SET 
   Category = REPLACE(Category, '"', '')
 
 
--- Usuniêcie tabeli bez typu reakcji
+-- Usuniecie tabeli bez typu reakcji
 DELETE FROM 
   Reactions 
 WHERE 
   Type IS NULL
 
 
--- Wyœwietlenie pierwszych 10 wierszy wyczyszczonej tabeli
+-- Wyswwietlenie pierwszych 10 wierszy wyczyszczonej tabeli
 SELECT 
   TOP 10 r.Content_Id as ID_Kontentu, 
   r.Type as Typ_Reakcji, 
